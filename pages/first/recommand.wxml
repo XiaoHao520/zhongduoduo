@@ -1,0 +1,15 @@
+<block wx:if='{{item.data.length > 0}}'>
+  <view class='' style="width:100%;height:100%;">
+    <!--fui-goods-group {{shop.goodsstyle > 0?"":"block"}} border  -->
+    <!-- <block wx:for='{{item.data}}' wx:for-item='item' wx:for-index='idx' wx:key="itemdata"> -->
+    <!--只取一个商品  -->
+
+    <scroll-view scroll-y class='first' data-type='{{item.data[0].type}}' data-goodsid='{{item.data[0].id}}' style='background-image:url("{{item.data[0].thumb}}"); width:100%;min-height:1000px;background-size:cover; max-height:3000px'>
+    <image src='{{item.data[0].thumb}}' style='height:auto;width:100%'></image>
+       <!-- <navigator class='buy-now' url='/pages/goods/detail/index?id={{item.data[0].id}}&frommyshop=1'> -->
+ <navigator class='buy-now' url= "/pages/order/create/index?id={{item.data[0].id}}&total=1&optionid=0">
+        <image src='/static/images/icon/buy.png' bindtap='buyNow' ></image>
+      </navigator> 
+    </scroll-view>
+  </view>
+</block>
