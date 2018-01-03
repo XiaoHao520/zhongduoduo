@@ -8,7 +8,7 @@ Page({
     interval: 5e3,
     duration: 500,
     circular: !0,
-    active: "",
+    active:"", 
     slider: "",
     tempname: "",
     info: "active",
@@ -155,7 +155,7 @@ Page({
   },
   buyNow: function (t) {
 
-       console.log("------------------"+t);
+ 
     var i = this,
       s = i.data.optionid,
       r = i.data.diyform;

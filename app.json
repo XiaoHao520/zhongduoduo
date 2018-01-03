@@ -64,7 +64,7 @@
     "list": [
       {
         "pagePath": "pages/first/first",
-        "text": "体验中心",
+        "text": "9.9元体验",
         "iconPath": "/static/images/icon/home.png",
         "selectedIconPath": "/static/images/icon-red/home.png"
       },

@@ -21,9 +21,9 @@
       <block wx:if="{{item.type == 'nav'}}">
         <include src='nav.wxml' />
       </block>
-      <block wx:if="{{item.type == 'recommand'}}">
+      <!-- <block wx:if="{{item.type == 'recommand'}}">
         <include src='recommand.wxml' />
-      </block>
+      </block> -->
     </block>
   </block>
 
@@ -32,14 +32,11 @@
       <view class="fui-line" style="background: #f4f4f4;">
         <view class='text text-danger'><text class='icon icon-hotfill'></text>店铺推荐</view>
       </view>
-
       <view class='fui-goods-group block border'>
         <block wx:for='{{storeRecommand}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
-
-        
           <template is='tpl_list' data="{{ item:item }}" />
         </block>
-      </view>
+      </view> 
     </view>
   </block>
 </view>

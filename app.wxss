@@ -3,18 +3,17 @@ page {
   height: 100%;
 }
 
-@keyframes box-shadow{
-
-  0%{
-    box-shadow: #fff  0px 0px 30px 0px;
+@keyframes box-shadow {
+  0% {
+    box-shadow: #fff 0px 0px 30px 0px;
   }
-  50%{
-  box-shadow: #fff  0px 0px 30px 20px;
 
+  50% {
+    box-shadow: #fff 0px 0px 30px 20px;
   }
- 100%{
-     box-shadow: #fff  0px 0px 30px 0px;
 
+  100% {
+    box-shadow: #fff 0px 0px 30px 0px;
   }
 }
 
@@ -22,14 +21,17 @@ page {
   position: fixed;
   bottom: 40px;
   right: 20px;
-  
-
- 
 }
-.buy-now image{
-  box-shadow: #fff  0px 0px 30px 0px;
-    border-radius: 50%;
-    animation: box-shadow  3s linear infinite; 
+
+.buy-now image {
+  box-shadow: #fff 0px 0px 30px 0px;
+  border-radius: 50%;
+}
+
+.item399 {
+  width: 100%;
+  height: 160px;
+  margin-bottom: 100px;
 }
 
 .picker-modal {
@@ -2402,7 +2404,6 @@ wx-view {
 
 .fui-goods-item {
   box-sizing: border-box;
-  position: relative;
   height: auto;
   padding: 20rpx;
   border-bottom: 1px solid #e7e7e7;

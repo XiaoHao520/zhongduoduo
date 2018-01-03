@@ -5,7 +5,7 @@
   <view class='page navbar {{isopen == 1?"header":""}}'>
     <block wx:if='{{isopen == 1}}'>
       <view class='fui-tab fixed fui-tab-danger'>
-        <view bindtap='myTab' data-type='0' class='item {{type == 0?"active":""}}'>充值记录</view>
+     <view bindtap='myTab' data-type='0' class='item {{type == 0?"active":""}}'>充值记录</view> 
         <view bindtap='myTab' data-type='1' class='item {{type == 1?"active":""}}'>提现记录</view>
       </view>
     </block>

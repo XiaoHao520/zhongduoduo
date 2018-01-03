@@ -192,8 +192,6 @@
         <view class='text-danger'>￥
           <text>{{successData.order.price}}</text>
         </view>
-
-
       </view>
       <view class='fui-cell'>
         <view class='fui-cell-remark noremark'>请到订单详情中查看详细信息</view>
@@ -203,11 +201,11 @@
       <navigator openType='redirect' class='btn btn-default' url='/pages/order/detail/index?id={{successData.order.id}}'>订单详情</navigator>
       <navigator openType='switchTab' url='/pages/index/index' class='btn btn-default'>返回商城</navigator>
     </view>
-    <view>
-      <text>{{successData.qrtitle}}</text>
+    <view style='text-align:center;margin-top:100px;' >
+      <text selectable='true'>现在您可以加客服微信： {{successData.qrtitle}}</text>
     </view>
-    <view>
+    <!-- <view>
       <image bindlongtap='scanQrcode' class='qrcode' src='http://www.sinbel.top/we7/attachment/{{successData.qrimg}}'></image>
-    </view>
+    </view> -->
   </view>
 </block>

@@ -29,7 +29,6 @@ Page({
         t.setData({
           shop: a
         })
-
     })
   },
   onReachBottom: function () {
@@ -38,7 +37,7 @@ Page({
   },
   getRecommand: function () {  //推荐
     var t = this;
-
+       
  
     t.setData({
       loading: !0
@@ -47,7 +46,6 @@ Page({
         page: t.data.page
       }, function (a) {
            console.log(a);
-
         var e = {
           loading: !1,
           total: a.total
@@ -63,9 +61,10 @@ Page({
             page: a.page + 1
           }), a.list.length < a.pagesize && (e.loaded = !0))
       })
+ 
   },
   onLoad: function (a) {
-    console.log(a)
+ 
     t.url(a)
   },
   onShow: function () {

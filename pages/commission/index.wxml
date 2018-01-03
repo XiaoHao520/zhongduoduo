@@ -10,7 +10,7 @@
         </view>
         <view class='fui-list-inner'>
           <view class='title'>{{member.nickname}}</view>
-          <view class='subtitle'>{{levelname}}</view>
+          <view hidden='true' class='subtitle'>{{levelname}}</view>
           <view class='text'>{{set.texts.up}}：{{agentname}}</view>
         </view>
       </view>
@@ -22,7 +22,10 @@
       </view>
       <view class='line able'>
         <navigator class='btn pull-right disabled' hoverClass='none' url='/pages/commission/withdraw/index'>
-        {{set.texts.commission}}{{set.texts.withdraw}}</navigator>
+         
+          提现
+         </navigator>
+        <!-- {{set.texts.commission}}{{set.texts.withdraw}}</navigator> -->
         <view class='text'>
           <view>{{set.texts.commission_ok}}({{set.texts.yuan}})</view>
           <view class='num'>{{member.commission_ok}}</view>
