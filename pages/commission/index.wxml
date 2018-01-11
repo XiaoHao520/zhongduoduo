@@ -22,7 +22,6 @@
       </view>
       <view class='line able'>
         <navigator class='btn pull-right disabled' hoverClass='none' url='/pages/commission/withdraw/index'>
-         
           提现
          </navigator>
         <!-- {{set.texts.commission}}{{set.texts.withdraw}}</navigator> -->

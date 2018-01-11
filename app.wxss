@@ -1558,8 +1558,8 @@ wx-view {
 .fui-cell-group .fui-cell .fui-cell-icon {
   color: #333;
   margin-right: 8rpx;
-  width: 32rpx;
-  height: 32rpx;
+  width: 64rpx;
+  height: 64rpx;
   color: #999;
   text-align: center;
 }

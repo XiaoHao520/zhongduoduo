@@ -5,7 +5,6 @@ Page({
     icons: e.requirejs("icons"),
     member: {},
     commission_ok:0.00
-
   },
   onLoad: function (r) {
     e.url(r),
@@ -31,7 +30,7 @@ Page({
   onShow: function () {
     this.getInfo()
 
-    console.log("---------------------------------------------")
+  
     this.getCommission();
   },
   onShareAppMessage: function () {
@@ -39,21 +38,18 @@ Page({
   },
   getCommission: function () {
     var _this=this;
-
+    
     console.log(_this.data);
     r.get("commission/index", {}, function (e) {
-          console.log(e);
+          console.log(e.member.commission_ok==null);
         _this.setData({
           commission_ok:e.member.commission_ok
-
         });
-      
-   console.log("@@@@@@@@@@@@@@@@@"+_this.data.commission_ok);
+        console.log(_this.data.commission_ok);
       if (7e4 == e.error) {
         
       }
     }
     )
-
   },
 })

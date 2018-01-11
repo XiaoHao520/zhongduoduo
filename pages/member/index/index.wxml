@@ -99,10 +99,9 @@
     <block wx:if='{{member.commission}}'>
       <view class='fui-cell-group fui-cell-click'>
         <navigator class='fui-cell' hoverClass='none' url='{{member.commission_url}}'>
-          <image class='fui-cell-icon' src='{{icons.group}}'></image>
+           <image class='fui-cell-icon' src='/static/images/icon/fenxiaoicon.png'></image> 
+          <!-- <image class='fui-cell-icon' src='{{icons.group}}'></image> -->
          <view class='fui-cell-text'>{{member.commission_text}}</view> 
-
-         
           <view class='fui-cell-remark'></view>
         </navigator>
       </view>
@@ -159,7 +158,7 @@
     </view>
     </view>
     <!--  
-              充值记录
+      充值记录
     <view class='fui-cell-group fui-cell-click'>
     <block wx:if='{{member.open_withdraw}}'>
         <navigator class='fui-cell' hoverClass='none' url='/pages/member/withdraw/index'>

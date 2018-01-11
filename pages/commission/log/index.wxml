@@ -25,7 +25,7 @@
               <view class='row'>
                 <view class='row-text'>编号: {{item.applyno}}</view>
               </view>
-              <view class='text'>申请{{textcomm}}: {{item.commission}} 实际金额: {{item.deductionmoney}} 个人所得税: {{item.deductionmoney + textyuan}}</view>
+              <view class='text'>申请{{textcomm}}: {{item.commission}} 实际金额: {{item.deductionmoney}} 服务费: {{item.deductionmoney + textyuan}}</view>
               <block wx:if='{{item.status == 1}}'>
                 <view class='text'>申请时间: {{item.dealtime}}</view>
               </block>

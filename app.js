@@ -120,7 +120,7 @@ App({
 	},
   globalData: {
     appid: "wx3d521092fc19232c",
-    api: "https://www.sinbel.top/we7/app/ewei_shopv2_api.php?i=3",
+    api: "https://www.sinbel.top/we7/app/ewei_shopv2_api.php?i=3",//3
     approot: "https://www.sinbel.top/we7/addons/ewei_shopv2/",
     userInfo: null
 	}

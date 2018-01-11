@@ -29,7 +29,6 @@ Page({
 			t.setData({
 				shop : a
 			})
- 
 		})
 	},
 	onReachBottom : function () {
@@ -37,15 +36,14 @@ Page({
 	},
 	getRecommand : function () {  //推荐
 		var t = this;
-
-    console.log(this.data.loading==1)
+    console.log(this.data)
 		t.setData({
 			loading : !0
 		}),
 		a.get("shop/get_recommand", {
 			page : t.data.page
 		}, function (a) {
-   console.log(a)
+ 
  
 			var e = {
 				loading : !1,
@@ -60,11 +58,12 @@ Page({
 			a.list.length > 0 && (t.setData({
 					storeRecommand : t.data.storeRecommand.concat(a.list),
 					page : a.page + 1
-				}), a.list.length < a.pagesize && (e.loaded = !0))
+				}), a.list.length < a.pagesize && (e.loaded = !0));
+ 
 		})
 	},
 	onLoad : function (a) {
-    console.log(a)
+ 
 		t.url(a)
 	},
 	onShow : function () {
@@ -90,5 +89,20 @@ Page({
 				(!s.data[o] || s.data[o] && i[o] < s.data[o]) && s.setData(i)
 			}
 		})
-	}
+	},
+  toGoodsList:function(e){
+      var _this=this;
+      _this.setData({
+        classname:e.currentTarget.dataset.classname
+      });
+       
+      console.log(_this.data.classname);;
+            
+      wx.navigateTo({
+        url: '/pages/index/goods/index?name=' + _this.data.classname,
+      }) 
+
+
+  }
+
 })

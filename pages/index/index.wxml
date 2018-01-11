@@ -6,6 +6,9 @@
       <block wx:if="{{item.type == 'adv'}}">
         <include src='adv.wxml' />
       </block>
+      <block wx:if="{{item.type == 'cube'}}">
+        <include src='cube.wxml' />
+      </block>
       <block wx:if="{{item.type == 'search'}}">
         <include src='search.wxml' />
       </block>
@@ -15,58 +18,57 @@
       <block wx:if="{{item.type == 'banner'}}">
         <include src='banner.wxml' />
       </block>
-      <block wx:if="{{item.type == 'cube'}}">
-        <include src='cube.wxml' />
-      </block>
+
       <block wx:if="{{item.type == 'nav'}}">
         <include src='nav.wxml' />
       </block>
-      <!-- <block wx:if="{{item.type == 'recommand'}}">
-        <include src='recommand.wxml' />
-      </block> -->
+      <block wx:if="{{item.type == 'recommand'}}">
+        <!-- <include src='recommand.wxml' /> -->
+      </block>
     </block>
   </block>
 
   <block wx:if="{{storeRecommand}}">
     <view id='recommand'>
       <view class="fui-line" style="background: #f4f4f4;">
-        <view class='text text-danger'><text class='icon icon-hotfill'></text>店铺推荐</view>
+        <view class='text text-danger'>
+          <text class='icon icon-hotfill'></text>店铺推荐</view>
       </view>
       <view class='fui-goods-group block border'>
         <block wx:for='{{storeRecommand}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
           <template is='tpl_list' data="{{ item:item }}" />
         </block>
-      </view> 
+      </view>
     </view>
   </block>
 </view>
 
 <template name="tpl_list">
-<block wx:if="{{item.subtitle!='成为代言人'}}">
-<view  class='fui-goods-item' data-goodsid='{{item.id}}' data-type='{{item.type}}' >
-<navigator url='/pages/goods/detail/index?id={{item.id}}'>
-<view class='image' style='background-image:url("{{item.thumb}}")' >
-<block wx:if='{{item.total <= 0}}'>
-	<view class='salez' style='background-image: url("{{item.saleout}}");' ></view>
-</block>
-</view>
-</navigator>
-<view class='detail'>
-<navigator url='/pages/goods/detail/index?id={{item.id}}'>
-<view class='name'>
-{{item.title}}
-  <block wx:if='{{item.ispresell == 1}}'>
-    <text class='fui-tag fui-tag-danger'>预售</text>
-  </block>
-</view>
-            <view class='index_price price'>
-                <view class='text'>
-                    ￥{{item.minprice}}
-                </view>
+  <block wx:if="{{item.subtitle!='成为代言人'}}">
+    <view class='fui-goods-item' data-goodsid='{{item.id}}' data-type='{{item.type}}'>
+      <navigator url='/pages/goods/detail/index?id={{item.id}}'>
+        <view class='image' style='background-image:url("{{item.thumb}}")'>
+          <block wx:if='{{item.total <= 0}}'>
+            <view class='salez' style='background-image: url("{{item.saleout}}");'></view>
+          </block>
+        </view>
+      </navigator>
+      <view class='detail'>
+        <navigator url='/pages/goods/detail/index?id={{item.id}}'>
+          <view class='name'>
+            {{item.title}}
+            <block wx:if='{{item.ispresell == 1}}'>
+              <text class='fui-tag fui-tag-danger'>预售</text>
+            </block>
+          </view>
+          <view class='index_price price'>
+            <view class='text'>
+              ￥{{item.minprice}}
             </view>
-</navigator>
-</view>
-</view>
- </block>
- <block wx:else></block>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </block>
+  <block wx:else></block>
 </template>

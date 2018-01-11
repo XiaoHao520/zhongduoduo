@@ -6,30 +6,61 @@ Page({
     listsort: "",
     page: 1,
     loaded: !1,
-    loading: !0, allcategory: [],
-    catlevel: -1, opencategory: !1,
-    category: {}, category_child: [],
+    loading: !0,
+    allcategory: [],
+    catlevel: -1,
+    opencategory: !1,
+    category: {},
+    category_child: [],
     category_third: [],
     filterBtns: {},
-    isfilter: 0, list: [], params: {},
-    total: 0, defaults: {
-      keywords: "", isrecommand: "",
-      ishot: "", isnew: "",
-      isdiscount: "", issendfree: "",
+    isfilter: 0,
+    list: [],
+    params: {},
+    total: 0,
+    defaults: {
+      keywords: "",
+      isrecommand: "",
+      ishot: "",
+      isnew: "",
+      isdiscount: "",
+      issendfree: "",
       istime: "",
       cate: "",
       order: "", by: "desc", merchid: 0
     }, lastcat: "", fromsearch: !1, searchRecords: []
   },
-  onLoad: function (t) {
-    if (!e.isEmptyObject(t)) {
-      var a = t.isrecommand || t.isnew || t.ishot || t.isdiscount || t.issendfree || t.istime ? 1 : 0; this.setData({
-        params: t, isfilter: a, filterBtns: t, fromsearch: t.fromsearch || !1
-      })
-    } this.initCategory(), t.fromsearch || this.getList(), this.getRecord()
+  onLoad: function (options) {
+    var _this = this;
+    _this.setData({
+      classname: options.name
+    })
+
   },
   onShow: function () {
-    this.data.fromsearch && this.setFocus()
+    // this.data.fromsearch && this.setFocus()
+   // t.target;
+   var _this=this;
+   console.log(_this.data.classname);
+    this.setData({
+      list: [], loading: !0, loaded: !1
+    });
+    var a = e.trim("成为代言人"),
+      s = this.data.defaults; "" != a ? (
+        s.keywords = a,
+        this.setData({
+          page: 1,
+          params: s,
+          fromsearch: !1
+        }),
+        this.getList(),
+        this.setRecord(a)) : (s.keywords = "",
+          this.setData({
+            page: 1, params: s,
+            listorder: "",
+            fromsearch: !1
+          }),
+          this.getList())
   },
   onReachBottom: function () {
     this.data.loaded || this.data.list.length == this.data.total || this.getList()
@@ -45,8 +76,9 @@ Page({
       })
     })
   },
-  getList: function () {
+  getList: function () { //t.data.params
     var t = this;
+ 
     t.setData({ loading: !0 }),
       t.data.params.page = t.data.page,
       a.get("goods/get_list", t.data.params, function (a) {
@@ -130,13 +162,15 @@ Page({
     })
   },
   bindSearch: function (t) {
+    var _this=this;
     t.target;
     this.setData({
       list: [], loading: !0, loaded: !1
     });
-    console.log("---------------" + t.detail.value)
-    var a = e.trim("成为代言人"),
-      s = this.data.defaults; "" != a ? (s.keywords = a,
+ 
+    var a = e.trim(_this.data.classname),
+      s = this.data.defaults; "" != a ? (
+        s.keywords = a,
         this.setData({
           page: 1,
           params: s,

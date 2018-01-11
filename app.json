@@ -48,7 +48,8 @@
     "pages/message/auth/index",
     "pages/first/recommand",
     "pages/spokesman/man/man",
-    "pages/spokesman/detail/index"
+    "pages/spokesman/detail/index",
+    "pages/index/goods/index"
   ],
   "global": {
     "window": {
@@ -70,7 +71,7 @@
       },
       {
         "pagePath": "pages/index/index",
-        "text": "所有商品",
+        "text": "商城推荐",
         "iconPath": "/static/images/icon/cate.png",
         "selectedIconPath": "/static/images/icon-red/cate.png"
       },

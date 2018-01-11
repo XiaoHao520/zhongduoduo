@@ -1,12 +1,13 @@
 <view wx:if="{{item.data.length > 0}}">
     <view class="fui-icon-group col-4 noborder circle">
         <block wx:for='{{item.data}}' wx:for-item='item' wx:for-index='idx' wx:key="nav">
-            <navigator url="{{item.url}}" class="fui-icon-col">
+            <!-- <navigator url="{{item.url}}" class="fui-icon-col"> -->
+              <view  bindtap='toGoodsList' data-classname='{{item.navname}}'  class="fui-icon-col">
                 <view>
-                    <image src='{{item.icon}}'></image>
+                    <image src='{{item.icon}}' ></image>
                 </view>
                 <view class='navs-navname'>{{item.navname}}</view>
-            </navigator>
+            </view>
         </block>
     </view>
 </view>
